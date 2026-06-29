@@ -1,49 +1,230 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import profilePicture from '../assets/profile-picture.jpeg';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main id="top">
+			<section id="perfil" class="hero">
+				<div class="hero-copy">
+					<p class="eyebrow">Estudiante de Ingeniería en Informática · Full Stack · IA</p>
+					<h1>Ismael Galindo</h1>
+					<p>
+						Soy estudiante de Ingeniería en Informática en la UTFSM con foco en desarrollo Full Stack,
+						aplicaciones de IA y arquitecturas RAG. He trabajado con pipelines de datos, bases de datos
+						vectoriales y despliegues con Docker y Kubernetes.
+					</p>
+					<div class="contact-pills">
+						<a href="mailto:igalindo199@gmail.com">igalindo199@gmail.com</a>
+						<a href="https://www.linkedin.com/in/ismaelgalindo" target="_blank" rel="noreferrer">LinkedIn</a>
+						<a href="https://github.com/ismv-dev" target="_blank" rel="noreferrer">GitHub</a>
+					</div>
+				</div>
+				<div class="hero-media">
+					<img src={profilePicture.src} alt="Foto de Ismael Galindo" />
+				</div>
+			</section>
+
+			<section id="habilidades">
+				<h2>Habilidades</h2>
+				<p>Stack técnico y herramientas que he integrado en proyectos personales y profesionales.</p>
+				<div class="tag-grid">
+					<div>
+						<h3>Lenguajes y librerías</h3>
+						<p>Python, Rust, HTML, CSS, JavaScript, React, Pandas, NumPy, Scikit-learn, TensorFlow, Keras, PyTorch, Streamlit, LightGBM.</p>
+					</div>
+					<div>
+						<h3>Frameworks y datos</h3>
+						<p>NextJS, Angular, Django, LangChain, LlamaIndex, PostgreSQL, MySQL, MongoDB, Redis, Qdrant.</p>
+					</div>
+					<div>
+						<h3>Cloud y DevOps</h3>
+						<p>AWS, Azure, GCP, Docker, Kubernetes, Ubuntu Server, Alpine Linux, Windows Server, Git, Bash.</p>
+					</div>
+					<div>
+						<h3>IA y metodologías</h3>
+						<p>Claude Code, Ollama, LM Studio, OpenRouter, n8n, Scrum, CRISP-DM, AIAD, patrones de diseño.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="experiencia">
+				<h2>Experiencia</h2>
+				<div class="timeline">
+					<article>
+						<h3>Desarrollador Full Stack · Ilustre Municipalidad de Valparaíso</h3>
+						<p>Junio 2025 - Septiembre 2025</p>
+						<p>Desarrollé módulos de UI del frontend y refactoricé el esquema de PostgreSQL del sistema interno de licitaciones para mejorar la consistencia y reducir consultas redundantes.</p>
+					</article>
+					<article>
+						<h3>Desarrollador Full Stack · engineering-resources</h3>
+						<p>Abril 2026 - Presente</p>
+						<p>Plataforma web modular con frontend en NextJS y pipeline automatizado en Rust para recolección de datos por RSS desplegado en servidor Ubuntu con almacenamiento en Supabase.</p>
+					</article>
+					<article>
+						<h3>Desarrollador Full Stack · rag-investment-assistant</h3>
+						<p>Mayo 2026 - Presente</p>
+						<p>Diseño de una plataforma de asistencia financiera basada en arquitectura RAG, con bases de datos vectoriales y orquestación con LangChain.</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="contacto">
+				<h2>Contacto</h2>
+				<p>Estoy abierto a oportunidades donde pueda combinar ingeniería, datos e IA para crear productos útiles.</p>
+				<div class="social-links">
+					<a href="mailto:igalindo199@gmail.com" target="_blank" rel="noreferrer" aria-label="Enviar correo">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm1.7 1.2 6.82 5.3a1.5 1.5 0 0 0 1.96 0l6.82-5.3v-.2H4.7v.2Zm14.6 1.67-5.99 4.66a3.5 3.5 0 0 1-4.62 0L4.7 8.37v8.13h14.6V8.37Z"/></svg>
+						<span>Correo</span>
+					</a>
+					<a href="https://www.linkedin.com/in/ismaelgalindo" target="_blank" rel="noreferrer" aria-label="Perfil de LinkedIn">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.38a1.56 1.56 0 0 0 0 3.12ZM5.5 9.5h2.88V18H5.5zM10.43 9.5h2.76v1.16h.04c.38-.72 1.32-1.48 2.72-1.48 2.91 0 3.45 1.91 3.45 4.4V18h-2.88v-7.58c0-1.81-.03-4.13-2.52-4.13-2.52 0-2.91 1.97-2.91 4.01V18H10.43z"/></svg>
+						<span>LinkedIn</span>
+					</a>
+					<a href="https://github.com/ismv-dev" target="_blank" rel="noreferrer" aria-label="Perfil de GitHub">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A12 12 0 0 0 0 12.7a12.2 12.2 0 0 0 8.2 11.6c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.4 3.4 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.6-1.4-5.6-6.2 0-1.4.5-2.5 1.2-3.4-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.4 1.2a11.8 11.8 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.4 0 4.8-2.9 5.9-5.7 6.2.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12.2 12.2 0 0 0 24 12.7 12 12 0 0 0 12 .5Z"/></svg>
+						<span>GitHub</span>
+					</a>
+				</div>
+			</section>
 		</main>
-		<Footer />
 	</body>
 </html>
+
+<style>
+	.hero {
+		display: grid;
+		grid-template-columns: 1.35fr 0.85fr;
+		gap: 2rem;
+		align-items: center;
+	}
+	.eyebrow {
+		margin-bottom: 0.6rem;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: rgba(248, 247, 255, 0.78);
+	}
+	.hero h1 {
+		margin-bottom: 0.85rem;
+	}
+	.contact-pills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.7rem;
+		margin-top: 1rem;
+	}
+	.contact-pills a {
+		padding: 0.55rem 0.9rem;
+		border-radius: 999px;
+		background: rgba(248, 247, 255, 0.16);
+		color: var(--text);
+		backdrop-filter: blur(10px);
+	}
+	.hero-media img {
+		width: min(100%, 320px);
+		margin-left: auto;
+		border-radius: 50%;
+		aspect-ratio: 1;
+		object-fit: cover;
+		box-shadow: 0 24px 60px rgba(6, 10, 30, 0.28);
+	}
+	.tag-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+	.tag-grid > div {
+		padding: 0.95rem 1rem;
+		border-radius: 1rem;
+		background: rgba(255, 255, 255, 0.08);
+	}
+	.timeline {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+	.timeline article {
+		padding-bottom: 0.6rem;
+	}
+	.timeline h3 {
+		margin-bottom: 0.3rem;
+	}
+	.timeline p:last-child {
+		margin-bottom: 0;
+	}
+	.social-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+	.social-links a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		padding: 0.8rem 1rem;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.1);
+	}
+	.social-links svg {
+		width: 1.25rem;
+		height: 1.25rem;
+	}
+	@media (max-width: 840px) {
+		.hero {
+			grid-template-columns: 1fr;
+		}
+		.hero-media img {
+			margin: 0 auto;
+		}
+	}
+	@media (max-width: 720px) {
+		.hero {
+			gap: 1.25rem;
+		}
+		.hero-copy {
+			text-align: center;
+		}
+		.contact-pills {
+			justify-content: center;
+		}
+		.tag-grid {
+			grid-template-columns: 1fr;
+		}
+		.social-links {
+			flex-direction: column;
+		}
+		.social-links a {
+			justify-content: center;
+		}
+	}
+
+	@media (max-width: 480px) {
+		section {
+			padding: 1.2rem 0.95rem;
+		}
+		.hero h1 {
+			font-size: 2rem;
+		}
+		.hero-media img {
+			width: min(100%, 220px);
+		}
+		.contact-pills {
+			flex-direction: column;
+		}
+		.contact-pills a {
+			text-align: center;
+		}
+	}
+</style>
