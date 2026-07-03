@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # 1. Definir la carpeta del proyecto
-            APP_DIR="/home/ismael"
+            APP_DIR="/projects"
             REPO_URL="git@github.com:ismv-dev/ismv.git"
 
             # 2. Navegar o clonar el repositorio
