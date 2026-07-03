@@ -1,0 +1,45 @@
+name: Despliegue Automático al servidor
+
+on:
+  push:
+    branches:
+      - main # Cambia la rama si es necesario
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código en GitHub Actions
+        uses: actions/checkout@v4
+
+      - name: Conectar al servidor y ejecutar el despliegue
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # 1. Definir la carpeta del proyecto
+            APP_DIR="/home/ismael"
+            REPO_URL="git@github.com:ismv-dev/ismv.git"
+
+            # 2. Navegar o clonar el repositorio
+            if [ -d "$APP_DIR" ]; then
+              echo "El directorio existe. Actualizando código..."
+              cd $APP_DIR
+              git fetch --all
+              git reset --hard origin/main
+            else
+              echo "Clonando el repositorio por primera vez..."
+              git clone $REPO_URL $APP_DIR
+              cd $APP_DIR
+            fi
+
+            # 3. Compilar la aplicación (ejemplo con Node.js / npm)
+            echo "Instalando dependencias y compilando..."
+            npm install
+            npm run build
+            cp -r dist/* /var/www/html/
+            
+            # 4. Reiniciar el servicio (ejemplo con pm2)
+            docker restart nginx-proxy-manager-app-1
